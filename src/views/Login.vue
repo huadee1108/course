@@ -30,20 +30,18 @@
         },
         methods:{
             goIndex: function () {
-                /*this.$axios.get('http://192.168.23.10/login/token.php?',
-                    this.loginMessage)
+                this.$axios.get('http://jsonplaceholder.typicode.com/posts')
                     .then((response) => {
                         console.log(response);
-                        this.photoImg = response.img;
-                        this.$router.push({path:'index',params:{photoImg:this.photoImg}});
+                        /*this.photoImg = response.img;
+                        localStorage.setItem('photoImg',this.photoImg);
+                        this.$router.push({path:'index'});*/
                     })
                     .catch((error) => {
                         console.log(error);
                         this.status = true;
                         this.errorMessage = "dd";
-                    })*/
-                localStorage.setItem('photoImg',this.photoImg);
-                this.$router.push({path:'index'});
+                    })
             }
         }
     }

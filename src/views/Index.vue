@@ -13,22 +13,6 @@
             <h4>步步高教育</h4>
             <h5>步步高升</h5>
         </div>
-        <div class="course_list">
-            <img class="course_img" src="../assets/jj.jpg">
-            <div class="num">
-                100人报名
-            </div>
-            <h4>步步高教育</h4>
-            <h5>步步高升</h5>
-        </div>
-        <div class="course_list">
-            <img class="course_img" src="../assets/jj.jpg">
-            <div class="num">
-                100人报名
-            </div>
-            <h4>步步高教育</h4>
-            <h5>步步高升</h5>
-        </div>
     </div>
 </template>
 
@@ -37,12 +21,21 @@
         name: "Index",
         data(){
             return{
-                photoImg: ''
+                photoImg: '',
+                courseList: []
             }
         },
         created:function () {
             this.photoImg = localStorage.getItem('photoImg');
             console.log(this.photoImg);
+            this.$axios.post('http://jsonplaceholder.typicode.com/posts')
+                .then((response) => {
+                    console.log(response);
+                    /*this.courseList.push(response.categories[7]);*/
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
         }
     }
 </script>
