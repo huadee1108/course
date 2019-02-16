@@ -25,22 +25,22 @@
                     password: ''
                 },
                 errorMessage: '',
-                photoImg: '../assets/log.png'
+                photoImg: require( '@/assets/log.png')
             }
         },
         methods:{
             goIndex: function () {
-                this.$axios.get('http://jsonplaceholder.typicode.com/posts')
+                this.$axios.get('http://jsonplaceholder.typicode.com/posts')//http://192.168.23.10/login/token.php?
                     .then((response) => {
                         console.log(response);
-                        /*this.photoImg = response.img;
+                        /*this.photoImg = response.img;*/
                         localStorage.setItem('photoImg',this.photoImg);
-                        this.$router.push({path:'index'});*/
+                        this.$router.push({path:'index'});
                     })
                     .catch((error) => {
                         console.log(error);
                         this.status = true;
-                        this.errorMessage = "dd";
+                        this.errorMessage = "dd";/*error*/
                     })
             }
         }

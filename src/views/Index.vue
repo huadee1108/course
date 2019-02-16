@@ -6,12 +6,12 @@
         </div>
         <hr>
         <div class="course_list">
-            <img class="course_img" src="../assets/jj.jpg">
+            <img class="course_img" src="../assets/jj.jpg"><!--categoryimgurl-->
             <div class="num">
-                100人报名
+                100人报名  <!--allenrollnum-->
             </div>
-            <h4>步步高教育</h4>
-            <h5>步步高升</h5>
+            <h4>步步高教育</h4><!--name-->
+            <h5>步步高升</h5><!--summary-->
         </div>
     </div>
 </template>
@@ -28,7 +28,7 @@
         created:function () {
             this.photoImg = localStorage.getItem('photoImg');
             console.log(this.photoImg);
-            this.$axios.post('http://jsonplaceholder.typicode.com/posts')
+            this.$axios.post('http://jsonplaceholder.typicode.com/posts')//http://192.168.23.10/product/webserver.php?wsfunction=get_categori
                 .then((response) => {
                     console.log(response);
                     /*this.courseList.push(response.categories[7]);*/
